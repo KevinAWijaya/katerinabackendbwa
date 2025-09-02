@@ -79,6 +79,8 @@ class CateringSubscriptionController extends Controller
             ->with([
                 'cateringPackage',
                 'cateringPackage.kitchen',
+                'cateringPackage.category',
+                'cateringPackage.city',
                 'tier',
             ])
             ->first();
