@@ -1,0 +1,37 @@
+php artisan make:model Category -m
+php artisan make:model City -m
+php artisan make:model Kitchen -m
+php artisan make:model CateringPackage -m
+php artisan make:model CateringTestimonial -m
+php artisan make:model CateringBonus -m
+php artisan make:model CateringPhoto -m
+php artisan make:model CateringTier -m
+php artisan make:model TierBenefit -m
+php artisan make:model CateringSubscription -m
+
+php artisan make:filament-resource Category --soft-deletes
+php artisan make:filament-resource City --soft-deletes
+php artisan make:filament-resource Kitchen --soft-deletes
+php artisan make:filament-resource CateringPackage --soft-deletes
+php artisan make:filament-resource CateringTestimonial --soft-deletes
+php artisan make:filament-resource CateringSubscription  --soft-deletes
+
+php artisan make:filament-widget CateringSubscriptionStats
+
+php artisan make:resource Api/CategoryApiResource
+php artisan make:resource Api/CityApiResource
+php artisan make:resource Api/KitchenApiResource
+php artisan make:resource Api/CateringPackageApiResource
+php artisan make:resource Api/CateringTestimonialApiResource
+php artisan make:resource Api/CateringBonusApiResource
+php artisan make:resource Api/CateringPhotoApiResource
+php artisan make:resource Api/CateringTierApiResource
+php artisan make:resource Api/TierBenefitApiResource
+php artisan make:resource Api/CateringSubscriptionApiResource
+php artisan make:resource Api/ViewCateringSubscriptionApiResource
+
+php artisan make:controller Api/CategoryController
+php artisan make:controller Api/CityController
+php artisan make:controller Api/CateringPackageController
+php artisan make:controller Api/CateringSubscriptionController
+php artisan make:controller Api/CateringTestimonialController
