@@ -10,12 +10,14 @@ use App\Models\CateringSubscription;
 use App\Models\CateringTier;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CateringSubscriptionController extends Controller
 {
     //
     public function store(StoreCateringSubscribeRequest $request)
     {
+
         $validatedData = $request->validated();
 
         $cateringPackage = CateringPackage::find($validatedData['catering_package_id']);
@@ -62,6 +64,7 @@ class CateringSubscriptionController extends Controller
         $validatedData['booking_trx_id'] = CateringSubscription::generateUniqueTrxId();
 
         $bookingTransaction = CateringSubscription::create($validatedData);
+
         $bookingTransaction->load(['cateringPackage', 'tier']);
 
         return new CateringSubscriptionApiResource($bookingTransaction);
