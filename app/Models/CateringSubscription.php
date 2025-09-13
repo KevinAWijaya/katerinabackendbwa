@@ -14,6 +14,7 @@ class CateringSubscription extends Model
         'booking_trx_id',
         'name',
         'photo',
+        'phone',
         'email',
         'delivery_time',
         'proof',
