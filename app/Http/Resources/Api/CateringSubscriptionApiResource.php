@@ -35,7 +35,7 @@ class CateringSubscriptionApiResource extends JsonResource
             'isPaid' => $this->is_paid,
             'proof' => $this->proof,
             'cateringPackage' => new CateringPackageApiResource($this->whenLoaded('cateringPackage')),
-            'cateringTier' => new CateringTierApiResource($this->whenLoaded('cateringTier')),
+            'tier' => new CateringTierApiResource($this->whenLoaded('tier')),
         ];
     }
 }
